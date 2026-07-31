@@ -1,76 +1,37 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+// Get Elements
+const profileForm = document.getElementById("profileForm");
+const fullName = document.getElementById("fullName");
+const role = document.getElementById("role");
+const skill = document.getElementById("skill");
 
-body{
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
+const cardSection = document.getElementById("cardSection");
+const cardName = document.getElementById("cardName");
+const cardRole = document.getElementById("cardRole");
+const cardSkill = document.getElementById("cardSkill");
 
-.container{
-    width:100%;
-    max-width:1100px;
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    align-items:flex-start;
-}
+const downloadBtn = document.getElementById("downloadBtn");
 
-.form-section,
-.card-section{
-    flex:1;
-    background:#fff;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
+// Generate Card
+profileForm.addEventListener("submit", function(e) {
 
-.form-section h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#333;
-}
+    // Prevent page reload
+    e.preventDefault();
 
-label{
-    display:block;
-    margin:12px 0 6px;
-    font-weight:bold;
-}
+    // Get input values
+    const nameValue = fullName.value;
+    const roleValue = role.value;
+    const skillValue = skill.value;
 
-input{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
-    outline:none;
-}
+    // Update card
+    cardName.textContent = nameValue;
+    cardRole.textContent = roleValue;
+    cardSkill.textContent = "#" + skillValue;
 
-input:focus{
-    border-color:#4facfe;
-}
+    // Show profile card
+    cardSection.classList.remove("hidden");
+});
 
-.generate-btn,
-.download-btn{
-    width:100%;
-    padding:12px;
-    margin-top:20px;
-    border:none;
-    border-radius:8px;
-    background:#4facfe;
-    color:white;
-    font-size:17px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.generate-btn:hover,
-.download-btn:hover{
-    background:#008cff
+// Download PDF
+downloadBtn.addEventListener("click", function() {
+    window.print();
+});
