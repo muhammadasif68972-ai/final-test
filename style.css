@@ -77,3 +77,47 @@ input:focus{
 .generate-btn:hover,
 .download-btn:hover{
     background:#008cff
+        
+.hidden{
+    display:block;
+}
+
+.profile-card{
+    width:100%;
+    min-height:420px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.profile-image{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.card-section{
+    width:100%;
+    max-width:450px;
+    min-height:550px;
+}
+
+.form-section{
+    width:100%;
+    max-width:450px;
+    min-height:550px;
+}
+
+@media (max-width:768px){
+    .container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .form-section,
+    .card-section{
+        width:100%;
+        max-width:400px;
+    }
+}
