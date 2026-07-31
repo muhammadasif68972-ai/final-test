@@ -36,4 +36,43 @@
                 <input
                     type="text"
                     id="skill"
-                    placeholder="Enter your skill
+                    placeholder="Enter your skill"
+                    required
+                >
+
+                <button type="submit" class="generate-btn">
+                    Generate Card
+                </button>
+
+            </form>
+        </div>
+
+        <!-- Card Preview -->
+        <div class="card-section hidden" id="cardSection">
+
+            <div class="profile-card">
+
+                <div class="profile-image">
+                    👤
+                </div>
+
+                <h2 id="cardName">Your Name</h2>
+
+                <h4 id="cardRole">Your Role</h4>
+
+                <p id="cardSkill">#Skill</p>
+
+            </div>
+
+            <button id="downloadBtn" class="download-btn">
+                Save / Download PDF
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
